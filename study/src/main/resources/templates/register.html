@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#712cf9">
+    <title>signUp Test 페이지</title>
+    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script>
+            src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous">
+    </script>
+    <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <src href="/templates/register.js"></src>
+</head>
+<body>
+<h4>Member Register Form</h4>
+    <form th:action="@{/user/register}" th:object="${userDto}" method="post">
+        <div class="form-loginId">  
+            <label for="loginId">회원 ID: </label>
+            <input type="text" id="loginId" name="loginId" th:field = "*{loginId}" 
+            th:classappend="${#fields.hasErrors('loginId')} ? 'is-invalid'" placeholder="아이디를 입력해주세요" aria-describedby="loginId" 
+            onblur="emailCheck()"/>            
+            <div th:if="${#fields.hasErrors('loginId')}" th:errors="*{loginId}" class="alert alert-danger" role="alert">
+             ID는 필수 값 입니다, ID를 입력해 주세요
+            </div>
+            <button>ID 중복 확인</button>
+            <p id="check-result"></p>
+        </div>
+        <br>
+        <div class="form-password">
+            <label for="password">비밀번호: </label>
+            <input type="password" id="password" name="password" th:field = "*{password}" 
+            th:classappend="${#fields.hasErrors('password')} ? 'is-invalid'" placeholder="비밀번호를 입력해주세요" />
+        </div>
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="alert alert-danger" role="alert">
+          비밀번호는 필수 값 입니다, 비밀번호를 입력해 주세요
+        </div>
+        <br>
+        <div class="form-passwordConfirm">
+             <label for="passwordConfirm">비밀번호 확인: </label>
+             <input type="password" name="passwordConfirm" class="form-control" th:field = "*{password}" 
+            th:classappend="${#fields.hasErrors('password')} ? 'is-invalid'" placeholder="비밀번호를 다시 입력해주세요"/>
+        </div>
+        <br>
+        <div class="form-username">
+            <label for="username">성명: </label>
+            <input type="text" id="username" name="username" placeholder="성함을 입력해주세요" th:field = "*{username}" 
+            th:classappend="${#fields.hasErrors('username')} ? 'is-invalid'"/>
+        </div>
+        <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="alert alert-danger" role="alert">
+          이름은 필수 값 입니다, 이름를 입력해 주세요
+        </div>
+        <br> 
+        <div class="form-email">
+            <label for="email">이메일: </label>
+            <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" th:field = "*{email}" 
+            th:classappend="${#fields.hasErrors('email')} ? 'is-invalid'"/>
+        </div>
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger" role="alert">
+          이메일은 필수 값 입니다, 이메일을 입력해 주세요
+        </div>
+        <br>
+        <button type="submit">가입하기</button>
+    </form>
+    <br>
+    <button type="submit"><a href="/index"></a>메인으로 가기</button>
+    <small class="py-2"> 이미 아이디가 존재합니까? <a href="/user/login">로그인 하기</a></small>
+</body>
+</html>
