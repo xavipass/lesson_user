@@ -60,7 +60,7 @@ public class SecurityConfig {
                 //== URL별 권한 관리 옵션 ==//
                 .authorizeRequests()
                 // 아이콘, css, js 관련
-                .antMatchers("/","/css/**","/images/**","/js/**","/favicon.ico","/user/**").permitAll() // 기본 페이지 인증없이  모두 접근 가능
+                .antMatchers("/","/css/**","/images/**","/js/**","/favicon.ico","/user/**","/studyRoom").permitAll() // 기본 페이지 인증없이  모두 접근 가능
                 .anyRequest().authenticated() // 위의 경로 이외에는 모두 인증된 사용자만 접근 가능
                 .and()
                 //== 소셜 로그인 설정 ==//

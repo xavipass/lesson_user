@@ -29,11 +29,11 @@
 <h4>Member Register Form</h4>
     <form th:action="@{/user/register}" th:object="${userDto}" method="post">
         <div class="form-loginId">  
-            <label for="loginId">회원 ID: </label>
-            <input type="text" id="loginId" name="loginId" th:field = "*{loginId}" 
-            th:classappend="${#fields.hasErrors('loginId')} ? 'is-invalid'" placeholder="아이디를 입력해주세요" aria-describedby="loginId" 
+            <label for="email">회원 ID: </label>
+            <input type="text" id="email" name="email" th:field = "*{email}" 
+            th:classappend="${#fields.hasErrors('loginId')} ? 'is-invalid'" placeholder="아이디를 입력해주세요" aria-describedby="email" 
             onblur="emailCheck()"/>            
-            <div th:if="${#fields.hasErrors('loginId')}" th:errors="*{loginId}" class="alert alert-danger" role="alert">
+            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger" role="alert">
              ID는 필수 값 입니다, ID를 입력해 주세요
             </div>
             <button>ID 중복 확인</button>

@@ -19,7 +19,7 @@ import java.util.Random;
 @PropertySource("classpath:application.properties")
 @RequiredArgsConstructor
 @Service
-public class mailService {
+public class MailService {
 
     private final JavaMailSender javaMailSender;
 

@@ -2,7 +2,7 @@ package com.example.extra.domain.controller;
 
 import com.example.extra.domain.dto.UserDto;
 import com.example.extra.domain.entity.User;
-import com.example.extra.domain.service.mailService;
+import com.example.extra.domain.service.MailService;
 import com.example.extra.domain.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,11 +24,11 @@ public class UserController {
 
     private final UserService userService;
 
-    private final mailService emailService;
+    private final MailService emailService;
 
 
     @GetMapping("/user/register")
-    public String registerForm(User user, Model model)  {
+    public String register(User user, Model model)  {
         model.addAttribute("userDto",new UserDto());
         return "register";
     }

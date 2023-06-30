@@ -17,7 +17,7 @@ import java.util.Date;
 // (access = AccessLevel.PROTECTED)
 @Builder
 public class User {
-    //(access = AccessLevel.PROTECTED)
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
