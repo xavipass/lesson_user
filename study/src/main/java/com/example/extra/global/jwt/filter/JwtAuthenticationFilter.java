@@ -112,6 +112,8 @@ public class JwtAuthenticationFilter  extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
+
+
 //    /**
 //     * [인증 허가 메소드]
 //     * 파라미터의 유저 : 우리가 만든 회원 객체 / 빌더의 유저 : UserDetails의 User 객체
