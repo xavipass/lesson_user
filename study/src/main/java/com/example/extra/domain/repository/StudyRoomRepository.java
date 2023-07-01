@@ -7,15 +7,10 @@ import java.util.Optional;
 
 public interface StudyRoomRepository extends JpaRepository <StudyRoom,Long> {
 
-//    Optional<StudyRoom> findAll(Pageable pageable);
-
     Optional<StudyRoom> findByRoomId(int roomId);
 
     Optional<StudyRoom> findByTitle(String title);
 
     Optional<StudyRoom> findByTeacher(String teacher);
 
-//    boolean findByTitle(boolean empty);
-//
-//    boolean findByTeacher(boolean empty);
 }
