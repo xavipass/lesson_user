@@ -50,20 +50,22 @@ public class UserService {
             1. 회원이 입력한 이메일로 DB에서 조회를 함
             2. DB에서 조회한 비밀번호와 사용자가 입력한 비밀번호가 일치하는지 판단
          */
-        Optional<User> byUserEmail = userRepository.findByEmail((userDto.getEmail()));
-        if (byUserEmail.isPresent()) {
+        Optional<User> byUsername = userRepository.findByUsername((userDto.getUsername()));
+        if (byUsername.isPresent()) {
             // 조회 결과가 있다(해당 이메일을 가진 회원 정보가 있다)
-            User user = byUserEmail.get();
-            if (user.getPassword().equals(userDto.getPassword())) {
+            User user = byUsername.get();
+                if (user.getPassword().equals(userDto.getPassword())){
                 // 비밀번호 일치
                 // entity -> dto 변환 후 리턴
                 UserDto dto = UserDto.toUserDto(user);
                 return dto;
             } else {
                 // 비밀번호 불일치(로그인실패)
+                    System.out.println("비밀번호를 다시 확인 해주세요");
                 return null;
             }
         } else {
+            System.out.println("해당 이메일 조회 결과가 없습니다");
             // 조회 결과가 없다(해당 이메일을 가진 회원이 없다)
             return null;
         }

@@ -21,7 +21,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
                 .apis(RequestHandlerSelectors.basePackage("com.example.extra"))
-                .paths(PathSelectors.ant("/*/**"))
+                .paths(PathSelectors.ant("/api/**"))
                 .build().apiInfo(apiInfoMetaData());
     }
 
@@ -29,7 +29,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 
         return new ApiInfoBuilder().title("StudyRoom User API Test")
                 .description("StudyRoom User API Endpoint Decoration")
-                .contact(new Contact("StudyRoom Api Test", "https://github.com/xavipass", "gss10960@gmail.com"))
+                .contact(new Contact("StudyRoom Api Test", "https://github.com/xavipass/lesson_user", "gss10960@gmail.com"))
                 .license("Apache 2.0")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
                 .version("1.0.0")

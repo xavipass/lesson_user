@@ -29,7 +29,7 @@ public class UserRepositoryTest {
     @Test
     public void getSaveTest(){
         User userSave = new User();
-        userSave.setId(Long.valueOf(8L));
+        userSave.setId(Math.toIntExact(Long.valueOf(12L)));
         userSave.setUsername("yong");
         userSave.setPassword("6666");
         userSave.setEmail("gqiew@gmail.com");
@@ -63,8 +63,8 @@ public class UserRepositoryTest {
     @DisplayName("3. 고객 정보 수정 테스트")
     @Test
     public void getUpdateTest(){
-        User updateUser = User.builder().id(3L).email("saawq@naver.com").password("ooready581$")
-                .id(Long.valueOf(9)).username("bigCat").build();
+        User updateUser = User.builder().id(12).email("saawq@naver.com").password("ooready581$")
+                .id(Math.toIntExact(Long.valueOf(12))).username("bigCat").build();
         // Entity 명.builder().userId().email().password().loginId().name().build();
         userRepository.save(updateUser);
         System.out.println(userRepository.save(updateUser));

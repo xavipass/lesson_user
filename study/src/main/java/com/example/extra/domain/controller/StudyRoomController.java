@@ -4,6 +4,7 @@ import com.example.extra.domain.dto.StudyRoomDto;
 import com.example.extra.domain.entity.PageResponse;
 import com.example.extra.domain.entity.StudyRoom;
 import com.example.extra.domain.service.StudyRoomService;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -24,12 +25,14 @@ public class StudyRoomController {
 
     private final StudyRoomService studyRoomService;
 
+    @ApiOperation(value = "", notes = "")
     @GetMapping("/user/create/studyRoom")
     public String createStudyRoom(StudyRoom studyRoom, Model model){
         model.addAttribute("studyRoomDto",new StudyRoomDto());
         return "/studyRoom";
     }
 
+    @ApiOperation(value = "", notes = "")
     @PostMapping("/user/create/studyRoom")
     public String studyRoom(@Valid @RequestBody StudyRoomDto studyRoomDto, BindingResult bindingResult,
                             Model model) throws Exception {
@@ -46,6 +49,7 @@ public class StudyRoomController {
         return "강의실 개설 성공";
     }
 
+    @ApiOperation(value = "", notes = "")
     @GetMapping("/studyRoom")
     public ResponseEntity<List<StudyRoomDto>> getStudyRoom(){
         List<StudyRoom> studyRoomList = new ArrayList<>();
@@ -54,12 +58,14 @@ public class StudyRoomController {
 //        return new ResponseEntity<>(studyRoomService.getAllStudyRoom(), HttpStatus.OK);
     }
 
+    @ApiOperation(value = "", notes = "")
     @GetMapping("/user/studyRoom/{roomId}")
     public ResponseEntity<StudyRoomDto> studyRoomDetail(@PathVariable int roomId) {
 
         return ResponseEntity.ok(studyRoomService.getByRoomId(roomId));
     }
 
+    @ApiOperation(value = "", notes = "")
     @GetMapping("/user/login/studyRoom/page")
     public PageResponse readAllPaging(
             @RequestParam(value = "pageNo", defaultValue = "0", required = false) int pageNo,
