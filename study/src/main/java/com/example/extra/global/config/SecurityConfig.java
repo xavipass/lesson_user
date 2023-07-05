@@ -26,6 +26,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
 
 
+// security 관련 Config
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor

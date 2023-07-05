@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 import java.util.Map;
 
+// social login custom service 클래스
 @Slf4j
 @Service
 @RequiredArgsConstructor

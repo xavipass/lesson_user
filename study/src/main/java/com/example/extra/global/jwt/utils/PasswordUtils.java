@@ -2,6 +2,7 @@ package com.example.extra.global.jwt.utils;
 
 import java.util.Random;
 
+// 인증 번호 전송 숫자 생성
 public class PasswordUtils {
 
     public static String generateRandomPassword() {

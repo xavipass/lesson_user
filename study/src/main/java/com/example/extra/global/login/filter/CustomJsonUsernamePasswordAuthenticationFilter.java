@@ -23,6 +23,7 @@ import java.util.Map;
  * "/login" 요청 왔을 때 JSON 값을 매핑 처리하는 필터
  */
 
+// security 인증 커스텀 필터
 public class CustomJsonUsernamePasswordAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 
     private static final String DEFAULT_LOGIN_REQUEST_URL = "/user/login"; // "/login"으로 오는 요청을 처리

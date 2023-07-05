@@ -5,7 +5,7 @@ import com.example.extra.domain.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
-
+// 모든 user repository
 public interface UserRepository extends JpaRepository <User, Long> {
 
     Optional<User> findById(int id);

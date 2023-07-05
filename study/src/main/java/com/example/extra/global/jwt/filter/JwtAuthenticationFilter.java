@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+// jwt 인증 필터
 @RequiredArgsConstructor
 @Slf4j
 public class JwtAuthenticationFilter  extends OncePerRequestFilter {

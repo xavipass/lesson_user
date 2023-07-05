@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+// security 인증 성공 시 반환
 @Slf4j
 @RequiredArgsConstructor
 public class LoginSuccessHandler  extends SimpleUrlAuthenticationSuccessHandler {

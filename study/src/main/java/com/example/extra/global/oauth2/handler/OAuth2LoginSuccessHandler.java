@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+// social login 성공시 반환
 @Slf4j
 @Component
 @RequiredArgsConstructor

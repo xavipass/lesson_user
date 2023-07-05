@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.util.Optional;
 
+// jwt 인증 관련 service
 @Service
 @RequiredArgsConstructor
 @Getter

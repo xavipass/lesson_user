@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+// user 데이터를 userService로 전송
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

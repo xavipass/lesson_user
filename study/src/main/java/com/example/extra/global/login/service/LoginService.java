@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+// login 인증 관련 service
 @Service
 @RequiredArgsConstructor
 public class LoginService implements UserDetailsService {

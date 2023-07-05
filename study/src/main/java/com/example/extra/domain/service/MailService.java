@@ -14,7 +14,7 @@ import javax.mail.internet.MimeMessage;
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
-
+// 비밀번호 찾기 인증번호 전송 service
 @Slf4j
 @PropertySource("classpath:application.properties")
 @RequiredArgsConstructor

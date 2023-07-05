@@ -9,6 +9,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 import java.util.Properties;
 
+// 인증번호 전송 관련 config
 @Configuration
 @PropertySource("classpath:application.properties")
 public class mailConfig {

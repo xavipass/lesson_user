@@ -18,6 +18,7 @@ import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
+// user 관련 모든 Api 컨트롤러
 @Slf4j
 @RestController
 @RequiredArgsConstructor

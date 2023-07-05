@@ -1,5 +1,6 @@
 package com.example.extra.global.oauth2;
 
+//
 import com.example.extra.domain.entity.Role;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;

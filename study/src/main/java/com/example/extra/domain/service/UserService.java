@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+// user 관련 모든 service
 @Service
 @Transactional
 @RequiredArgsConstructor

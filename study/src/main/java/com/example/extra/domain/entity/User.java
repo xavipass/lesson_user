@@ -11,6 +11,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+// 모든 User 관련 Entity
 @Table(name = "_users")
 @Data
 @Entity
